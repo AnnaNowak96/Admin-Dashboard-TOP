@@ -24,6 +24,34 @@ header {
     border: none;
 }
 
+form {
+    display: flex;
+    padding: 20px 0 20px 80px;   
+}
+
+input {
+    flex:1;
+    border-radius: 20px;
+    background-image: url(img/magnify.svg);
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: 12px 20px 12px 40px;
+    height: 35px;
+    background-color: #e7f1f5;
+    border:lightgray;
+}
+
+form img {
+    padding-left: 200px;
+    padding-right: 40px;
+}
+
+#below-header {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+}
+
 #sidebar {
     background-color: #1295d2;
     grid-area: 1/1/5/2;
@@ -35,10 +63,20 @@ header {
     font-weight: 600;
 }
 
+#sidebar li {
+    padding: 10px;
+}
+
+#sidebar ul {
+    padding: 40px;  
+    list-style-type: none;
+}
+
 .logo {
     display: flex;
     align-items: center;
     padding: 10px;
+    margin-bottom: 30px;
     gap: 15px;
 }
 
@@ -48,53 +86,90 @@ header {
     color: white;
 }
 
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
 #projects {
     background-color: #e7f1f5;
     grid-area: 2/2/5/4;
     font-size: 20px;
-    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35%, 1fr));
+    padding: 20px;
+    gap:20px; 
 }
 
-#projects strong {
-    font-size: 22px;
-    font-weight: 600;
+#projects .card-title {
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
     padding: 20px;
     background-color: white; 
     border-left-color: rgb(247, 230, 4); 
     border-left-width:8px;
     border-left-style: solid;
+    display: flex;
+    flex-direction: column;  
+   
+}
+
+#projects .card-title {
+    /* background-color: red; */
+}
+
+.icons > img {
+    padding: 10px;
 }
 
 .card .title {
     font-size: 20px;
     font-weight: 600;
-    padding-bottom: 5px;
 }
-
-.card .icons {
-    padding-top: 40px;
-}
-
-.icons > img {
-    padding: 0 15px;
-}
-
 
 #announcments {
     background-color: #e7f1f5;
-    grid-area: 2/4/2/5;
-    border: 1px solid black;
+    grid-template-rows: repeat(auto-fit, minmax(50%, 1fr));
+}
+
+.box-title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.box {
+    background-color: white;
+    padding: 20px;
 }
 
 #trending {
+    padding-top: 40px;
     background-color: #e7f1f5;
-    grid-area: 3/4/4/5;
-    border: 1px solid black;
+    grid-template-rows: repeat(auto-fit, minmax(50%, 1fr));
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+}
+
+.container p {
+    display: flex;
+    padding-left: 20px;
+    
+}
+
+.container-title {
+    font-weight: 600;
+    color: black;
+}
+
+.container-tex-name {
+    color: grey;
 }
 
 .user-pic {
